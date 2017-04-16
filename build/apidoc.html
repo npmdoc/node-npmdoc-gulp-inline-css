@@ -61,12 +61,93 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-inline-css">module gulp-inline-css</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-inline-css.gulp-inline-css">
+            function <span class="apidocSignatureSpan"></span>gulp-inline-css
+            <span class="apidocSignatureSpan">(opt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-inline-css.toString">
+            function <span class="apidocSignatureSpan">gulp-inline-css.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.gulp-inline-css" id="apidoc.module.gulp-inline-css">module gulp-inline-css</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-inline-css.gulp-inline-css" id="apidoc.element.gulp-inline-css.gulp-inline-css">
+        function <span class="apidocSignatureSpan"></span>gulp-inline-css
+        <span class="apidocSignatureSpan">(opt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gulp-inline-css = function (opt) {
+    return through.obj(function (file, enc, cb) {
+        var self = this,
+            _opt = JSON.parse(JSON.stringify(opt || {}));
+
+        // &#x27;url&#x27; option is required
+        // set it automatically if not provided
+        if (!_opt.url) {
+            _opt.url = &#x27;file://&#x27; + file.path;
+        }
+
+        if (file.isNull()) {
+            cb(null, file);
+            return;
+        }
+
+        if (file.isStream()) {
+            cb(new gutil.PluginError(&#x27;gulp-inline-css&#x27;, &#x27;Streaming not supported&#x27;));
+            return;
+        }
+
+        inlineCss(file.contents, _opt)
+            .then(function (html) {
+                file.contents = new Buffer(String(html));
+
+                self.push(file);
+
+                return cb();
+            })
+            .catch(function (err) {
+                if (err) {
+                    self.emit(&#x27;error&#x27;, new gutil.PluginError(&#x27;gulp-inline-css&#x27;, err));
+                }
+            });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-inline-css.toString" id="apidoc.element.gulp-inline-css.toString">
+        function <span class="apidocSignatureSpan">gulp-inline-css.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return toString;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

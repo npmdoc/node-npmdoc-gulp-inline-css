@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/jonkemp/gulp-inline-css#readme"
-
-    >gulp-inline-css (v3.1.0)</a>
+    <a href="https://github.com/jonkemp/gulp-inline-css#readme">gulp-inline-css (v3.1.0)</a>
 </h1>
 <h4>Inline linked css in an html file. Useful for emails.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-inline-css">module gulp-inline-css</a><ol>
 
@@ -99,10 +92,10 @@
         var self = this,
             _opt = JSON.parse(JSON.stringify(opt || {}));
 
-        // &#x27;url&#x27; option is required
+        // 'url' option is required
         // set it automatically if not provided
         if (!_opt.url) {
-            _opt.url = &#x27;file://&#x27; + file.path;
+            _opt.url = 'file://' + file.path;
         }
 
         if (file.isNull()) {
@@ -111,7 +104,7 @@
         }
 
         if (file.isStream()) {
-            cb(new gutil.PluginError(&#x27;gulp-inline-css&#x27;, &#x27;Streaming not supported&#x27;));
+            cb(new gutil.PluginError('gulp-inline-css', 'Streaming not supported'));
             return;
         }
 
@@ -125,7 +118,7 @@
             })
             .catch(function (err) {
                 if (err) {
-                    self.emit(&#x27;error&#x27;, new gutil.PluginError(&#x27;gulp-inline-css&#x27;, err));
+                    self.emit('error', new gutil.PluginError('gulp-inline-css', err));
                 }
             });
     });
@@ -157,3 +150,4 @@
     ]
 </div>
 </div>
+</body></html>
