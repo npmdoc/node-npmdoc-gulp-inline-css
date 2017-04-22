@@ -83,8 +83,8 @@
 <tspan x="10" y="1290">  │ │ │   └─┬ superagent@1.8.5 </tspan>
 <tspan x="10" y="1306">  │ │ │     ├── component-emitter@1.2.1 </tspan>
 <tspan x="10" y="1322">  │ │ │     ├── cookiejar@2.0.6 </tspan>
-<tspan x="10" y="1338">  │ │ │     ├─┬ debug@2.6.3 </tspan>
-<tspan x="10" y="1354">  │ │ │     │ └── ms@0.7.2 </tspan>
+<tspan x="10" y="1338">  │ │ │     ├─┬ debug@2.6.4 </tspan>
+<tspan x="10" y="1354">  │ │ │     │ └── ms@0.7.3 </tspan>
 <tspan x="10" y="1370">  │ │ │     ├─┬ form-data@1.0.0-rc3 </tspan>
 <tspan x="10" y="1386">  │ │ │     │ ├── async@1.5.2 </tspan>
 <tspan x="10" y="1402">  │ │ │     │ ├─┬ combined-stream@1.0.5 </tspan>
